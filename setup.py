@@ -23,14 +23,7 @@ setup(
                 'lietorch/src/lietorch_cpu.cpp'],
             extra_compile_args={
                 'cxx': ['-O2'], 
-                'nvcc': ['-O2',
-                    '-gencode=arch=compute_60,code=sm_60', 
-                    '-gencode=arch=compute_61,code=sm_61', 
-                    '-gencode=arch=compute_70,code=sm_70', 
-                    '-gencode=arch=compute_75,code=sm_75',
-                    '-gencode=arch=compute_75,code=compute_75',
-                    
-                ]
+                'nvcc': ['-O2']
             }),
 
         CUDAExtension('lietorch_extras', 
@@ -44,17 +37,8 @@ setup(
             ],
             extra_compile_args={
                 'cxx': ['-O2'], 
-                'nvcc': ['-O2',
-                    '-gencode=arch=compute_60,code=sm_60', 
-                    '-gencode=arch=compute_61,code=sm_61', 
-                    '-gencode=arch=compute_70,code=sm_70', 
-                    '-gencode=arch=compute_75,code=sm_75',
-                    '-gencode=arch=compute_75,code=compute_75',
-                    
-                ]
+                'nvcc': ['-O2']
             }),
     ],
     cmdclass={ 'build_ext': BuildExtension }
 )
-
-
